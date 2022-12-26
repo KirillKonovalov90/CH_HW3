@@ -1,4 +1,6 @@
-﻿void QubesToN(int N)
+﻿                                    //Программа выводит таблицу значений от 1 до заданного числа N
+
+void QubesToN(int N)
 {
     int count;
 
