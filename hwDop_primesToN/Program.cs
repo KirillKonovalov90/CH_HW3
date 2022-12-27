@@ -1,43 +1,52 @@
 ﻿                                                        //Программа выводит на экран таблицу простых чисел от 1 до заданного числа N
 
-void IsPrime(int num)
+bool IsPrime(int num)
 {
     int count;
+    bool check;
 
     count = 2;
+    check = false ;
 
     while (count <= num)
     {
         if (count == num)
         {
-            System.Console.Write($"| {num} |");
+            check = true;
             break;
         }
         else if (num % count == 0)
         {
             break;
         }
-        else count++;
+        else 
+        {
+            count++;
+        }
     }
+    return check;
 }
 
-void PrimesToN(int N)
+void PrimesToN(int numN)
 {
     int iterator;
 
     iterator = 2;
 
-    while (iterator <= N)
+    while (iterator <= numN)
     {
-        IsPrime(iterator);
+        if (IsPrime(iterator) == true)
+        {
+            System.Console.Write($"| {iterator} |");
+        }
         iterator++;        
     }
     
 }
 
-int N;
+int numN;
 
 Console.Write("Введите число: ");
-N = int.Parse(Console.ReadLine()!);
+numN = int.Parse(Console.ReadLine()!);
 
-PrimesToN(N);
+PrimesToN(numN);
